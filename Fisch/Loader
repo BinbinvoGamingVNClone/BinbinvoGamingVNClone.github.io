@@ -12,24 +12,14 @@
                                                               
                                                                                                                                   Thank For Using BinbinvoGaming Hub!!!  
                                                                                                                                        BINBINVOGAMING HUB ON TOP!!!
-                                                                                                                                              Beta 1.0.3                                                                                                                                                        
+                                                                                                                                              Beta Loader                                                                                                                                                        
 ]]--
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "BinbinvoGaming Hub - Fisch", HidePremium = false, IntroText = "BinbinvoGaming Hub - Fisch", SaveConfig = true, ConfigFolder = "OrionTest"})
-local Tab = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-Tab:AddButton({
-	Name = "Fisch V1",
-	Callback = function()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/BinbinvoGamingVNClone/BinbinvoGamingVNClone.github.io/refs/heads/main/Fisch/V1/Loader",true))()
-  	end    
-})
-Tab:AddButton({
-	Name = "Fisch V2",
-	Callback = function()
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/BinbinvoGamingVNClone/BinbinvoGamingVNClone.github.io/refs/heads/main/Fisch/V2/Loader",true))()
-  	end    
-})
+if getgenv().BinbinvoGamingHubVer == "V1" then
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/BinbinvoGamingVNClone/BinbinvoGamingVNClone.github.io/refs/heads/main/Fisch/V1/Loader",true))()
+elseif getgenv().BinbinvoGamingHubVer == "V2" then
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/BinbinvoGamingVNClone/BinbinvoGamingVNClone.github.io/refs/heads/main/Fisch/V2/Loader",true))()
+elseif getgenv().BinbinvoGamingHubVer == "V3" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BinbinvoGamingVNCloneBinbinvoGamingVNClone.github.io/refs/heads/main/Fisch/V3/Loader",true))()
+else
+    game.Players.LocalPlayer:Kick("Pls Enter You Versionnnn!!!!!!!!!! ")
+end
